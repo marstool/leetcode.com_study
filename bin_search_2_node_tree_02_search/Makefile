@@ -5,4 +5,4 @@ all :
 	./bin.bin
 
 bin.bin: a00.c a01.c h00.h
-	gcc a00.c a01.c a03.c -o $@
+	gcc a00.c a01.c a02.c a03.c -o $@

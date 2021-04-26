@@ -17,3 +17,7 @@ BSTIterator* bSTIteratorCreate(struct TreeNode* root) ;
 int bSTIteratorNext(BSTIterator* obj) ;
 bool bSTIteratorHasNext(BSTIterator* obj) ;
 void bSTIteratorFree(BSTIterator* obj) ;
+
+struct TreeNode * _treeNodeCreate( char *___sbuf ) ;
+int               _treeNodeFree( struct TreeNode * ___treeNodeTop);
+

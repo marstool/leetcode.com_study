@@ -31,7 +31,16 @@ struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) {
         return _findNext( root -> right , ___now ) ;
     }
 
-    //if ( root -> val > ___now -> val ) {
+    if ( root -> val > ___now -> val ) {
+        if ( NULL != ___now -> right ) {
+            return _findNext( ___now -> right , ___now ) ;
+        }
+        return root ;
+    }
+
+    if ( NULL != root -> left ) {
+        return _findNext( root -> left , ___now ) ;
+    }
     return root ;
 }
 
