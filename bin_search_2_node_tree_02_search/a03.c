@@ -14,6 +14,7 @@ struct TreeNode* _findPrev( struct TreeNode* root ) {
         }
         root = __tmpNode ;
     }
+    return NULL ;
 }
 struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) {
     struct TreeNode* __tmpNode ;
@@ -40,18 +41,20 @@ BSTIterator* bSTIteratorCreate(struct TreeNode* root) {
     return &_ST01 ;
 }
 
+
+bool bSTIteratorHasNext(BSTIterator* obj) {
+    if ( NULL == obj  ) return false ;
+    if ( NULL == obj -> curNode ) return false ;
+    return true ;
+}
+
+
 int bSTIteratorNext(BSTIterator* obj) {
     int __rt ; 
     if ( false == bSTIteratorHasNext( obj ) ) return -1 ;
     __rt = obj -> curNode -> val ; 
     obj -> curNode = _findNext( obj -> nodeRoot , obj -> curNode ) ;
     return __rt ;
-}
-
-bool bSTIteratorHasNext(BSTIterator* obj) {
-    if ( NULL == obj  ) return false ;
-    if ( NULL == obj -> curNode ) return false ;
-    return true ;
 }
 
 void bSTIteratorFree(BSTIterator* obj) {
