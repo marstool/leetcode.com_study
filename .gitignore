@@ -1,1 +1,5 @@
 *.bin
+cscope.out
+tags
+cscope.in?
+cscope.files

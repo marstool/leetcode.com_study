@@ -1,0 +1,22 @@
+
+all : 
+	rm -f bin.bin
+	make b
+	./bin.bin
+
+all_c:=$(wildcard src*/*.c)
+all_h:=$(wildcard h*/*.h)
+all_h_dir:=$(sort $(dir $(all_h)))
+#all_h_dir:=$(foreach aa1,$(all_h_dir),$(realpath $(aa1)))
+gcc_h_inc:=$(foreach aa1,$(all_h_dir),-I $(aa1))
+
+$(info	all_h_dir : $(all_h_dir))
+$(info	gcc_h_inc : $(gcc_h_inc))
+
+b : bin.bin
+
+bin.bin: $(all_c) $(all_h)
+	gcc $(gcc_h_inc) $(all_c) -o $@
+
+m:
+	vim Makefile
