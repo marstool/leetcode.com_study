@@ -1,33 +1,34 @@
 #include "h00.h"
 
-bool isValidBST(struct TreeNode* root);
+bool isValidBST(TreeNode* root);
 
 //#ifdef kk
 // [5,1,4,null,null,3,6]
 //
-struct TreeNode a22 = { 3, NULL , NULL };
-struct TreeNode a23 = { 6, NULL , NULL };
-struct TreeNode a10 = { 1, NULL , NULL };
-struct TreeNode a11 = { 4, &a22 , &a23 };
-struct TreeNode a00 = { 5, &a10 , &a11 };
+TreeNode a22 = { 3, NULL , NULL };
+TreeNode a23 = { 6, NULL , NULL };
+TreeNode a10 = { 1, NULL , NULL };
+TreeNode a11 = { 4, &a22 , &a23 };
+TreeNode a00 = { 5, &a10 , &a11 };
 //#endif
 
 // [[[7,3,15,null,null,9,20]],[],[],[],[],[],[],[],[],[]]
-struct TreeNode d22 = { 9, NULL , NULL };
-struct TreeNode d23 = { 20, NULL , NULL };
-struct TreeNode d11 = { 3, NULL , NULL };
-struct TreeNode d10 = { 15, &d22 , &d23 };
-struct TreeNode d00 = { 7, &d10 , &d11 };
+TreeNode d22 = { 9, NULL , NULL };
+TreeNode d23 = { 20, NULL , NULL };
+TreeNode d11 = { 3, NULL , NULL };
+TreeNode d10 = { 15, &d22 , &d23 };
+TreeNode d00 = { 7, &d10 , &d11 };
 
 // [3,1,4,null,2]
-struct TreeNode b22 = { 2, NULL , NULL };
-struct TreeNode b10 = { 4, NULL , NULL };
-struct TreeNode b11 = { 1, NULL , &b22 };
-struct TreeNode b00 = { 3, &b10 , &b11 };
+TreeNode b22 = { 2, NULL , NULL };
+TreeNode b10 = { 4, NULL , NULL };
+TreeNode b11 = { 1, NULL , &b22 };
+TreeNode b00 = { 3, &b10 , &b11 };
 
 int main( int ___argc , char **___argv ){
     bool __rt ;
     BSTIterator *__st01 ;
+    TreeNode * __treeNode01;
 
     printf ( "\n\n" );
     //printf ( "true is :%s\n" , true?"true":"false" );
@@ -78,8 +79,8 @@ int main( int ___argc , char **___argv ){
     printf( "Has next ? %s\n" , bSTIteratorHasNext( __st01 ) ? "true" : "false" ); // return False
     printf( " expect --- 3,1,4,null,2        1 2 3 4 \n\n" );
 
-    __st01 = _treeNodeCreate("5,1,4,null,null,3,6");
-    __rt = isValidBST( &a00 );
+    __treeNode01 = _treeNodeCreate("5,1,4,null,null,3,6");
+    __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s\n" , __rt?"true":"false" );
 
     printf( "\n\n" ) ;

@@ -55,7 +55,7 @@ bool valid2(struct TreeNode* ___L, struct TreeNode* root, struct TreeNode* ___R)
     return true;
 }
 
-bool isValidBST(struct TreeNode* root){
+bool isValidBST(TreeNode* root){
     //return valid2( root, NULL, NULL );
     //return valid2( root, root->left, root->right );
     return valid2( NULL , root, NULL );

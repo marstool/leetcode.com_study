@@ -3,3 +3,4 @@ cscope.out
 tags
 cscope.in?
 cscope.files
+*/obj/*.o

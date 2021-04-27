@@ -1,7 +1,7 @@
 #include "h00.h"
 
 
-struct TreeNode * _treeNodeCreate( char *___sbuf ) {
+TreeNode * _treeNodeCreate( char *___sbuf ) {
     int __cn01 ;
     char *__ch01 ;
     int __cn02 ;
@@ -23,6 +23,6 @@ struct TreeNode * _treeNodeCreate( char *___sbuf ) {
 
     return NULL ;
 }
-int               _treeNodeFree( struct TreeNode * ___treeNodeTop){
+int               _treeNodeFree( TreeNode * ___treeNodeTop){
     return 0 ;
 }
