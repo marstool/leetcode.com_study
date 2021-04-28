@@ -37,7 +37,7 @@ TreeNode * _treeNodeCreate( char *___sbuf ) {
     for ( __cn01 = 1 ; __cn01 < _max_treeAmount ; __cn01 ++ ){
         __cp01 = index(___sbuf , ',');
         if ( NULL == __cp01 ) {
-            __cn02 = 0 ;
+            __cn02 = strlen( ___sbuf )  ;
         } else {
             __cn02 = __cp01 - ___sbuf ;
         }
