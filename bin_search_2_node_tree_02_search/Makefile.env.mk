@@ -10,4 +10,10 @@ bin01 := \
 	a02   	\
 	a03   	\
 
+l5 : line5
+line5 :
+	@echo ; echo ; echo ; echo ; echo ; echo ; echo ; echo ; echo ; echo
+
+a : vp b line5 t
+
 

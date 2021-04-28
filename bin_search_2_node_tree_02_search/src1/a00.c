@@ -25,10 +25,9 @@ TreeNode b10 = { 4, NULL , NULL };
 TreeNode b11 = { 1, NULL , &b22 };
 TreeNode b00 = { 3, &b10 , &b11 };
 
-int main( int ___argc , char **___argv ){
+void test01(){
     bool __rt ;
     BSTIterator *__st01 ;
-    TreeNode * __treeNode01;
 
     printf ( "\n\n" );
     //printf ( "true is :%s\n" , true?"true":"false" );
@@ -79,10 +78,21 @@ int main( int ___argc , char **___argv ){
     printf( "Has next ? %s\n" , bSTIteratorHasNext( __st01 ) ? "true" : "false" ); // return False
     printf( " expect --- 3,1,4,null,2        1 2 3 4 \n\n" );
 
+} // test01
+
+void test02(){
+    TreeNode * __treeNode01;
+    bool __rt ;
+
     __treeNode01 = _treeNodeCreate("5,1,4,null,null,3,6");
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s\n" , __rt?"true":"false" );
 
     printf( "\n\n" ) ;
+} // test02
+
+int main( int ___argc , char **___argv ){
+    //test01();
+    test02();
     return 0 ;
-}
+} // main
