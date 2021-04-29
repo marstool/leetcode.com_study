@@ -9,6 +9,9 @@ char _str_null[] = "null" ;
 
 void _treeNodeCreateOne( char *___sbuf , int ___idx ) {
     int __cn02 ;
+    int __upIdx ;
+    int __upL0R1 ;
+    int __v01 ;
 
     if ( 1 == ___idx ) { printf("\n"); } ; printf("[%d]<%s>\n", ___idx , ___sbuf);
     if ( NULL == ___sbuf 
@@ -19,14 +22,28 @@ void _treeNodeCreateOne( char *___sbuf , int ___idx ) {
     }
     __cn02 = strlen( ___sbuf )  ;
 
+    _treeNodeArr[___idx] . left  = NULL ;
+    _treeNodeArr[___idx] . right = NULL ;
+
+    __upIdx = (___idx >> 1) ;
+    __upL0R1 = (___idx & 1);
+
     if ( __cn02 == 4 
             && ___sbuf[0] == 'n' 
             && ___sbuf[1] == 'u' 
             && ___sbuf[2] == 'l' 
             && ___sbuf[3] == 'l' 
        ) {
+        __v01 = 0 ;
+
+        if ( 1 == __upL0R1 ) {  _treeNodeArr[__upIdx] . right = _treeNodeArr + ___idx ; }
+        else                 {  _treeNodeArr[__upIdx] . left  = _treeNodeArr + ___idx ; }
     } else {
+        __v01 = atoi( ___sbuf ) ;
     }
+
+    _treeNodeArr[___idx] . val = __v01 ;
+
 } // _treeNodeCreateOne
 
 TreeNode * _treeNodeCreate( char *___sbuf ) {
