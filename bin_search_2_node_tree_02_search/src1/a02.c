@@ -11,7 +11,12 @@ void _treeNodeCreateOne( char *___sbuf , int ___idx ) {
     int __cn02 ;
 
     if ( 1 == ___idx ) { printf("\n"); } ; printf("[%d]<%s>\n", ___idx , ___sbuf);
-    if ( NULL == ___sbuf ) return ;
+    if ( NULL == ___sbuf 
+            || 0 >= ___idx 
+            || _max_treeAmount <= ___idx ) {
+        fprintf( stderr , "error _treeNodeCreateOne : %d : %s\n", ___idx , (NULL==___sbuf)?"null":"notNull" ); 
+        return ;
+    }
     __cn02 = strlen( ___sbuf )  ;
 
     if ( __cn02 == 4 
