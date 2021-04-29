@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
+//#define _max_treeAmount    32    // moust be 2 ^^ 1,2,3,4,5.... 2, 4, 8 , 16 , 32
+#define _max_treeAmount    16    // moust be 2 ^^ 1,2,3,4,5.... 2, 4, 8 , 16 , 32
+
 struct TreeNode {
     int val;
     struct TreeNode *left;
@@ -23,3 +27,5 @@ void bSTIteratorFree(BSTIterator* obj) ;
 TreeNode * _treeNodeCreate( char *___sbuf ) ;
 int               _treeNodeFree( TreeNode * ___treeNodeTop);
 
+void _dumpTreeNode(TreeNode* root);
+bool isValidBST(TreeNode* root);

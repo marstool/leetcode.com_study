@@ -1,8 +1,6 @@
 #include "h00.h"
 
 
-//#define _max_treeAmount    32    // moust be 2 ^^ 1,2,3,4,5.... 2, 4, 8 , 16 , 32
-#define _max_treeAmount    16    // moust be 2 ^^ 1,2,3,4,5.... 2, 4, 8 , 16 , 32
 TreeNode _treeNodeArr[ _max_treeAmount ] ;
 TreeNode * _treeNode_top ;
 char _str_null[] = "null" ;

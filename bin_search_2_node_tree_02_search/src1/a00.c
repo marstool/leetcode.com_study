@@ -1,6 +1,5 @@
 #include "h00.h"
 
-bool isValidBST(TreeNode* root);
 
 //#ifdef kk
 // [5,1,4,null,null,3,6]
@@ -87,6 +86,7 @@ void test02(){
     __treeNode01 = _treeNodeCreate("5,1,4,null,null,3,6");
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s\n" , __rt?"true":"false" );
+    _dumpTreeNode( __treeNode01 );
 
     printf( "\n\n" ) ;
 } // test02

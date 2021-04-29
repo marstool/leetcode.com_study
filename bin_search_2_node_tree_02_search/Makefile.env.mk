@@ -9,6 +9,7 @@ bin01 := \
 	a01   	\
 	a02   	\
 	a03   	\
+	a04   	\
 
 l5 : line5
 line5 :
