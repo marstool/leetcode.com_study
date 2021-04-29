@@ -8,17 +8,20 @@ TreeNode * _treeNode_top ;
 char _str_null[] = "null" ;
 
 void _treeNodeCreateOne( char *___sbuf , int ___idx ) {
+    int __cn02 ;
+
     if ( 1 == ___idx ) { printf("\n"); } ; printf("[%d]<%s>\n", ___idx , ___sbuf);
-    /*
-       if ( __cn02 == 4 
-       && ___sbuf[0] == 'n' 
-       && ___sbuf[1] == 'u' 
-       && ___sbuf[2] == 'l' 
-       && ___sbuf[3] == 'l' 
+    if ( NULL == ___sbuf ) return ;
+    __cn02 = strlen( ___sbuf )  ;
+
+    if ( __cn02 == 4 
+            && ___sbuf[0] == 'n' 
+            && ___sbuf[1] == 'u' 
+            && ___sbuf[2] == 'l' 
+            && ___sbuf[3] == 'l' 
        ) {
-       } else {
-       }
-       */
+    } else {
+    }
 } // _treeNodeCreateOne
 
 TreeNode * _treeNodeCreate( char *___sbuf ) {
