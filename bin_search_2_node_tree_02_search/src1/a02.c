@@ -1,5 +1,7 @@
 #include "h00.h"
 
+#define _dbtc if(0)
+//#define _dbtc 
 
 TreeNode _treeNodeArr[ _max_treeAmount ] ;
 TreeNode * _treeNode_top ;
@@ -11,7 +13,7 @@ void _treeNodeCreateOne( char *___sbuf , int ___idx ) {
     int __upL0R1 ;
     int __v01 ;
 
-    if ( 1 == ___idx ) { printf("\n"); } ; printf("[%d]<%s>\n", ___idx , ___sbuf);
+    if ( 1 == ___idx ) { _dbtc printf("\n"); } ; _dbtc printf("[%d]<%s>\n", ___idx , ___sbuf);
     if ( NULL == ___sbuf 
             || 0 >= ___idx 
             || _max_treeAmount <= ___idx ) {
@@ -53,7 +55,7 @@ TreeNode * _treeNodeCreate( char *___sbuf ) {
 
     _treeNode_top = NULL ;
 
-    printf( "trying to create for <%s>, get < " , ___sbuf?___sbuf:"(null)" );
+    _dbtc printf( "trying to create for <%s>, get < " , ___sbuf?___sbuf:"(null)" );
     if ( NULL == ___sbuf ) {  // EOF met
         return NULL ; 
     }

@@ -45,15 +45,15 @@ void test01(){
 
     __st01 = bSTIteratorCreate( &a00 ) ;
 
-//     bSTIterator.next();    // return 3
-//     bSTIterator.next();    // return 7
-//     bSTIterator.hasNext(); // return True
-//     bSTIterator.next();    // return 9
-//     bSTIterator.hasNext(); // return True
-//     bSTIterator.next();    // return 15
-//     bSTIterator.hasNext(); // return True
-//     bSTIterator.next();    // return 20
-//     bSTIterator.hasNext(); // return False
+    //     bSTIterator.next();    // return 3
+    //     bSTIterator.next();    // return 7
+    //     bSTIterator.hasNext(); // return True
+    //     bSTIterator.next();    // return 9
+    //     bSTIterator.hasNext(); // return True
+    //     bSTIterator.next();    // return 15
+    //     bSTIterator.hasNext(); // return True
+    //     bSTIterator.next();    // return 20
+    //     bSTIterator.hasNext(); // return False
     printf( "next get : %d\n" , bSTIteratorNext( __st01 ) );    // return 3
     printf( "next get : %d\n" , bSTIteratorNext( __st01 ) );    // return 7
     printf( "Has next ? %s\n" , bSTIteratorHasNext( __st01 ) ? "true" : "false" ); // return True
@@ -79,13 +79,26 @@ void test01(){
 
 } // test01
 
+char _str01[] = "5,1,4,null,null,3,6" ;
+char _str02[] = "7,3,15,null,null,9,20" ;
+char _str03[] = "3,1,4,null,2" ;
 void test02(){
     TreeNode * __treeNode01;
     bool __rt ;
 
-    __treeNode01 = _treeNodeCreate("5,1,4,null,null,3,6");
+    __treeNode01 = _treeNodeCreate( _str01 );
     __rt = isValidBST( __treeNode01 );
-    printf ( "create result is :========= %s\n" , __rt?"true":"false" );
+    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str01 );
+    _dumpTreeNode( __treeNode01 );
+
+    __treeNode01 = _treeNodeCreate( _str02 );
+    __rt = isValidBST( __treeNode01 );
+    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str02 );
+    _dumpTreeNode( __treeNode01 );
+
+    __treeNode01 = _treeNodeCreate( _str03 );
+    __rt = isValidBST( __treeNode01 );
+    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str03 );
     _dumpTreeNode( __treeNode01 );
 
     printf( "\n\n" ) ;
