@@ -15,7 +15,7 @@ void _dumpTreeNode(TreeNode* root){
         printf( " %d ", __tp -> val );
 
         if (NULL == __tp -> right) printf( "R(*)" );
-        else                       printf( "R(%d)", __tp -> left -> val );
+        else                       printf( "R(%d)", __tp -> right -> val );
         
         if ( 3 == __i01 % 4 ) {
             printf( "\n" ) ;

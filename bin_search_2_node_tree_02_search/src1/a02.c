@@ -33,11 +33,12 @@ void _treeNodeCreateOne( char *___sbuf , int ___idx ) {
             && ___sbuf[3] == 'l' 
        ) {
         __v01 = 0 ;
-
-        if ( 1 == __upL0R1 ) {  _treeNodeArr[__upIdx] . right = _treeNodeArr + ___idx ; }
-        else                 {  _treeNodeArr[__upIdx] . left  = _treeNodeArr + ___idx ; }
+        if ( 1 == __upL0R1 ) {  _treeNodeArr[__upIdx] . right = NULL ; }
+        else                 {  _treeNodeArr[__upIdx] . left  = NULL ; }
     } else {
         __v01 = atoi( ___sbuf ) ;
+        if ( 1 == __upL0R1 ) {  _treeNodeArr[__upIdx] . right = _treeNodeArr + ___idx ; }
+        else                 {  _treeNodeArr[__upIdx] . left  = _treeNodeArr + ___idx ; }
     }
 
     _treeNodeArr[___idx] . val = __v01 ;
