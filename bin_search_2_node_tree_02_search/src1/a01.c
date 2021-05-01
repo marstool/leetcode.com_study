@@ -28,8 +28,8 @@ char * _dumpT1( struct TreeNode*  ___d ){
 
 bool valid2_debug = false ;
 bool valid2(struct TreeNode* ___L, struct TreeNode* root, struct TreeNode* ___R){
-    bool __rtLeft ;
-    bool __rtRight ;
+    //bool __rtLeft ;
+    //bool __rtRight ;
 
     if ( valid2_debug ) {
         printf( "%s" , _dumpT1( ___L ));

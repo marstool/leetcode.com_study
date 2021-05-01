@@ -2,7 +2,8 @@
 
 BSTIterator* bSTIteratorCreate(struct TreeNode* root) {
     _ST01 . nodeRoot = root ;
-    _ST01 . curNode  = _findPrev( root ) ;
+    _ST01 . firstNode  = _findFirst( root ) ;
+    _ST01 . curNode  = _ST01 . firstNode  ;
     return &_ST01 ;
 }
 

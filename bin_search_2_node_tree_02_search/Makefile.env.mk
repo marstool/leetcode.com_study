@@ -1,5 +1,5 @@
 
-CFGmakeRun:=Makefile.run.c01.mk
+CFGmakeRun:=Makefile.run.gcc01.mk
 
 GccTOP:=\
 	bin01

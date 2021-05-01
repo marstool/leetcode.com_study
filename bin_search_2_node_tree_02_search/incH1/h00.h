@@ -15,7 +15,8 @@ struct TreeNode {
 typedef struct TreeNode TreeNode ;
 
 typedef struct {
-    TreeNode *nodeRoot ;
+    TreeNode *nodeRoot ; // topRoot
+    TreeNode *firstNode ; // firstRoot
     TreeNode *curNode ;
     
 } BSTIterator;
@@ -34,3 +35,5 @@ bool isValidBST(TreeNode* root);
 extern BSTIterator _ST01 ;
 struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) ;
 struct TreeNode* _findPrev( struct TreeNode* root ) ;
+
+struct TreeNode* _findFirst( struct TreeNode* root ) ;

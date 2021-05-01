@@ -3,6 +3,10 @@
 
 BSTIterator _ST01 = { NULL };
 
+struct TreeNode* _findFirst( struct TreeNode* root ) {
+    return NULL ;
+}
+
 struct TreeNode* _findPrev( struct TreeNode* root ) {
     struct TreeNode* __tmpNode ;
     if ( NULL == root ) return NULL ;
@@ -18,7 +22,7 @@ struct TreeNode* _findPrev( struct TreeNode* root ) {
 }
 
 struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) {
-    struct TreeNode* __tmpNode ;
+    //struct TreeNode* __tmpNode ;
 
     if ( NULL == root ) return NULL ;
     if ( NULL == ___now ) return NULL ;
