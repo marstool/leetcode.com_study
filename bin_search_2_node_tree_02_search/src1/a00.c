@@ -79,12 +79,18 @@ void test01(){
 
 } // test01
 
+char _str00[] = "2,1,3";
 char _str01[] = "5,1,4,null,null,3,6" ;
 char _str02[] = "7,3,15,null,null,9,20" ;
 char _str03[] = "3,1,4,null,2" ;
 void test02(){
     TreeNode * __treeNode01;
     bool __rt ;
+
+    __treeNode01 = _treeNodeCreate( _str00 );
+    __rt = isValidBST( __treeNode01 );
+    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str00 );
+    _dumpTreeNode( __treeNode01 );
 
     __treeNode01 = _treeNodeCreate( _str01 );
     __rt = isValidBST( __treeNode01 );

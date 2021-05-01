@@ -10,6 +10,7 @@ struct TreeNode {
     int val;
     struct TreeNode *left;
     struct TreeNode *right;
+    bool isNull ;
 } ;
 typedef struct TreeNode TreeNode ;
 
@@ -29,3 +30,7 @@ int               _treeNodeFree( TreeNode * ___treeNodeTop);
 
 void _dumpTreeNode(TreeNode* root);
 bool isValidBST(TreeNode* root);
+
+extern BSTIterator _ST01 ;
+struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) ;
+struct TreeNode* _findPrev( struct TreeNode* root ) ;
