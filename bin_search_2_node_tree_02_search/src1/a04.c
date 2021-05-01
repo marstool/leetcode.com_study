@@ -24,3 +24,6 @@ void _dumpTreeNode(TreeNode* root){
         }
     }
 } // _dumpTreeNode
+
+void _dumpBSTsort( BSTIterator * ___iter ) {
+} // _dumpBSTsort
