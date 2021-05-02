@@ -115,18 +115,22 @@ void test03(){
     TreeNode * __treeNode01;
     //bool __rt ;
 
+    printf ( "create --- %s \n" , _str00 );
     __treeNode01 = _treeNodeCreate( _str00 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
 
+    printf ( "create --- %s \n" , _str01 );
     __treeNode01 = _treeNodeCreate( _str01 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
 
+    printf ( "create --- %s \n" , _str02 );
     __treeNode01 = _treeNodeCreate( _str02 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
 
+    printf ( "create --- %s \n" , _str03 );
     __treeNode01 = _treeNodeCreate( _str03 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
