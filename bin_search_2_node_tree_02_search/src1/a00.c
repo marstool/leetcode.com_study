@@ -158,6 +158,7 @@ void test04(){
     __tmpNode = insertIntoBST( __tmpNode , 4 );
     __tmpNode = insertIntoBST( __tmpNode , 3 );
     _dumpTreeNode( __tmpNode );
+    printf("\n");
 
 } // test04
 

@@ -1,6 +1,33 @@
 #include "h00.h"
 
+void _dumpOneTreeNode(TreeNode* ___tn){
+    if ( NULL == ___tn ) { printf( "L(*) ** R(*)" ); return ; }
+
+    if (NULL == ___tn -> left) printf( "L(*)" );
+    else                       printf( "L(%d)", ___tn -> left -> val );
+
+    printf( " %d ", ___tn -> val );
+
+
+    if (NULL == ___tn -> right) printf( "L(*)" );
+    else                        printf( "L(%d)", ___tn -> right -> val );
+
+    return ;
+} // _dumpOneTreeNode
+
+
 void _dumpTreeNode(TreeNode* root){
+    //int __i01 ; 
+    //TreeNode* __tp ;
+
+    if ( NULL == root ) { printf( "===== NULL treeNodeArr MET ! 1838191 =====\n" ); return ; }
+
+    _dumpOneTreeNode( root ) ;
+    if ( NULL != root -> left)   _dumpOneTreeNode( root -> left ) ;
+    if ( NULL != root -> right)  _dumpOneTreeNode( root -> right ) ;
+} // _dumpTreeNode
+
+void _dumpTreeNodeBAK(TreeNode* root){
     int __i01 ; 
     TreeNode* __tp ;
 
@@ -25,21 +52,6 @@ void _dumpTreeNode(TreeNode* root){
     }
 } // _dumpTreeNode
 
-void _dumpOneTreeNode(TreeNode* ___tn){
-    if ( NULL == ___tn ) { printf( "L(*) ** R(*)" ); return ; }
-
-    if (NULL == ___tn -> left) printf( "L(*)" );
-    else                       printf( "L(%d)", ___tn -> left -> val );
-
-    printf( " %d ", ___tn -> val );
-
-
-    if (NULL == ___tn -> right) printf( "L(*)" );
-    else                        printf( "L(%d)", ___tn -> right -> val );
-
-    return ;
-} // _dumpOneTreeNode
-
 void _dumpBSTsort( BSTIterator * ___iter ) {
     bool __rt ;
     int __cnt01;
@@ -52,7 +64,7 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
             , ___iter -> nodeRoot -> val  
             , ___iter -> firstNode -> val 
             , ___iter -> curNode -> val 
-           );
+            );
 
     printf ( " 81839113 the BSTiter is : nodeRoot : " );
     _dumpOneTreeNode( ___iter -> nodeRoot );
