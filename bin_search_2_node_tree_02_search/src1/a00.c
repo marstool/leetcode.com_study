@@ -118,6 +118,19 @@ void test03(){
     __treeNode01 = _treeNodeCreate( _str00 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
+
+    __treeNode01 = _treeNodeCreate( _str01 );
+    __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
+    _dumpBSTsort( __tmpIter ) ;
+
+    __treeNode01 = _treeNodeCreate( _str02 );
+    __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
+    _dumpBSTsort( __tmpIter ) ;
+
+    __treeNode01 = _treeNodeCreate( _str03 );
+    __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
+    _dumpBSTsort( __tmpIter ) ;
+
 } // test03
 
 int main( int ___argc , char **___argv ){

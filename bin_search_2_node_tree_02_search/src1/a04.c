@@ -50,7 +50,7 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
     //TreeNode * __treeNode01;
     //TreeNode * __treeNode02;
 
-    if ( NULL == ___iter ) { printf( "===== NULL BSTIterator MET ! 81839111 =====\n" ); return ; }
+    if ( NULL == ___iter ) { printf( "===== NULL BSTIterator MET ! 81839111 =====\n\n" ); return ; }
 
     printf ( " the BSTiter is : nodeRoot : %s,  first : %s, current : %s \n" , 
             _dumpOneTreeNode( ___iter -> nodeRoot ),
@@ -63,6 +63,7 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
     if ( false == __rt ) {
         printf( "===== inValid BSTIterator Found ! 81839112 =====\n" ); 
         _dumpTreeNode( ___iter -> nodeRoot );
+        printf("\n");
         return ; 
     }
 
@@ -71,4 +72,5 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
     //TreeNode * __treeNode02;
 
     // __rt = isValidBST( __treeNode01 );
+    printf("\n");
 } // _dumpBSTsort
