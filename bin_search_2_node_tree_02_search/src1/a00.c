@@ -143,9 +143,28 @@ void test03(){
 
 } // test03
 
+void test04(){
+    TreeNode * __tmpNode;
+
+    __tmpNode = NULL;
+
+    // "5,2,6,1,7,4,3" ;
+    // struct TreeNode* insertIntoBST(struct TreeNode* root, int val){
+    __tmpNode = insertIntoBST( __tmpNode , 5 );
+    __tmpNode = insertIntoBST( __tmpNode , 2 );
+    __tmpNode = insertIntoBST( __tmpNode , 6 );
+    __tmpNode = insertIntoBST( __tmpNode , 1 );
+    __tmpNode = insertIntoBST( __tmpNode , 7 );
+    __tmpNode = insertIntoBST( __tmpNode , 4 );
+    __tmpNode = insertIntoBST( __tmpNode , 3 );
+    _dumpTreeNode( __tmpNode );
+
+} // test04
+
 int main( int ___argc , char **___argv ){
     //test01();
     //test02();
-    test03();
+    //test03();
+    test04();
     return 0 ;
 } // main
