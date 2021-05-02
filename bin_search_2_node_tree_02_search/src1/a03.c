@@ -48,8 +48,8 @@ struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) {
         return _findFirst( ___now -> right ) ;
     }
 
-    if ( root -> val < ___now -> val ) {
-        return _findFirst( ___now -> right ) ;
+    if ( root -> val < ___now -> val ) { // root < now
+        return _findNext( root -> right , ___now ) ;
     }
 
     // root -> val > ___now -> val 
