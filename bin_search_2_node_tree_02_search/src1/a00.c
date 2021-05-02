@@ -113,17 +113,11 @@ void test02(){
 void test03(){
     BSTIterator * __tmpIter ;
     TreeNode * __treeNode01;
-    bool __rt ;
+    //bool __rt ;
 
     __treeNode01 = _treeNodeCreate( _str00 );
-    __rt = isValidBST( __treeNode01 );
-    if ( false == __rt ) {
-        printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str00 );
-        _dumpTreeNode( __treeNode01 );
-    } else {
-        __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
-        _dumpBSTsort( __tmpIter ) ;
-    }
+    __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
+    _dumpBSTsort( __tmpIter ) ;
 } // test03
 
 int main( int ___argc , char **___argv ){
