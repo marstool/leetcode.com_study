@@ -93,22 +93,22 @@ void test02(){
     TreeNode * __treeNode01;
     bool __rt ;
 
-    __treeNode01 = _treeNodeCreate( _str00 );
+    __treeNode01 = _treeNodeCreateX( _str00 );
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str00 );
     _dumpTreeNode( __treeNode01 );
 
-    __treeNode01 = _treeNodeCreate( _str01 );
+    __treeNode01 = _treeNodeCreateX( _str01 );
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str01 );
     _dumpTreeNode( __treeNode01 );
 
-    __treeNode01 = _treeNodeCreate( _str02 );
+    __treeNode01 = _treeNodeCreateX( _str02 );
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str02 );
     _dumpTreeNode( __treeNode01 );
 
-    __treeNode01 = _treeNodeCreate( _str03 );
+    __treeNode01 = _treeNodeCreateX( _str03 );
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str03 );
     _dumpTreeNode( __treeNode01 );
@@ -122,22 +122,23 @@ void test03(){
     //bool __rt ;
 
     printf ( "create --- %s \n" , _str00 );
-    __treeNode01 = _treeNodeCreate( _str00 );
+    __treeNode01 = _treeNodeCreateX( _str00 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
+    return ;
 
     printf ( "create --- %s \n" , _str01 );
-    __treeNode01 = _treeNodeCreate( _str01 );
+    __treeNode01 = _treeNodeCreateX( _str01 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
 
     printf ( "create --- %s \n" , _str02 );
-    __treeNode01 = _treeNodeCreate( _str02 );
+    __treeNode01 = _treeNodeCreateX( _str02 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
 
     printf ( "create --- %s \n" , _str03 );
-    __treeNode01 = _treeNodeCreate( _str03 );
+    __treeNode01 = _treeNodeCreateX( _str03 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
 
@@ -170,7 +171,7 @@ void test04(){
 int main( int ___argc , char **___argv ){
     //test01();
     //test02();
-    //test03();
-    test04();
+    test03();
+    //test04();
     return 0 ;
 } // main

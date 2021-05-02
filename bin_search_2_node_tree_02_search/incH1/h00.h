@@ -27,6 +27,7 @@ bool bSTIteratorHasNext(BSTIterator* obj) ;
 void bSTIteratorFree(BSTIterator* obj) ;
 
 TreeNode * _treeNodeCreate( char *___sbuf ) ;
+TreeNode * _treeNodeCreateX( char *___sbuf ) ;
 int               _treeNodeFree( TreeNode * ___treeNodeTop);
 
 void _dumpTreeNode(TreeNode* root);
