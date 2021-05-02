@@ -6,7 +6,7 @@ void _dumpTreeNode(TreeNode* root){
 
     if ( NULL == root ) { printf( "===== NULL treeNodeArr MET ! 1838191 =====\n" ); return ; }
 
-    for ( __i01 = 0 ; __i01 < _max_treeAmount ; __i01 ++ ) {
+    for ( __i01 = -1 ; __i01 < _max_treeAmount - 1; __i01 ++ ) {
         __tp = root + __i01 ;
 
         if (NULL == __tp -> left) printf( "L(*)" );
@@ -17,7 +17,7 @@ void _dumpTreeNode(TreeNode* root){
         if (NULL == __tp -> right) printf( "R(*)" );
         else                       printf( "R(%d)", __tp -> right -> val );
 
-        if ( 3 == __i01 % 4 ) {
+        if ( 2 == __i01 % 4 ) {
             printf( "\n" ) ;
         } else {
             printf( "\t" ) ;
@@ -52,11 +52,12 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
 
     if ( NULL == ___iter ) { printf( "===== NULL BSTIterator MET ! 81839111 =====\n" ); return ; }
 
-    printf ( " the BSTiter is : %s, %s, %s \n" , 
+    printf ( " the BSTiter is : nodeRoot : %s,  first : %s, current : %s \n" , 
             _dumpOneTreeNode( ___iter -> nodeRoot ),
             _dumpOneTreeNode( ___iter -> firstNode ),
             _dumpOneTreeNode( ___iter -> curNode )
            );
+    _dumpTreeNode( ___iter -> nodeRoot );
 
     //__treeNode01 = ___iter -> nodeRoot ;
     //__treeNode02 = ___iter -> firstNode ;

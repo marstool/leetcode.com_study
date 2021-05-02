@@ -73,7 +73,7 @@ TreeNode * _treeNodeCreate( char *___sbuf ) {
         _treeNodeCreateOne( __buf , __cn01 ) ;
 
         if ( 1 == __cn01 ) {
-            _treeNode_top = _treeNodeArr ;
+            _treeNode_top = _treeNodeArr + 1 ;
         }
 
         if ( NULL == __cp01 ) {
