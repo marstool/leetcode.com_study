@@ -22,7 +22,9 @@ bool bSTIteratorHasNext(BSTIterator* obj) {
 }
 
 
-void bSTIteratorFree(BSTIterator* obj) {
-    
+void bSTIteratorFree(BSTIterator* ___iter) {
+    ___iter -> nodeRoot = NULL ;
+    ___iter -> firstNode  = NULL ;
+    ___iter -> curNode  = NULL ;
 }
 
