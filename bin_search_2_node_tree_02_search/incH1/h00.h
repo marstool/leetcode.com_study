@@ -40,3 +40,4 @@ struct TreeNode* _findPrev( struct TreeNode* root ) ;
 struct TreeNode* _findFirst( struct TreeNode* root ) ;
 struct TreeNode* searchBST(struct TreeNode* root, int val);
 struct TreeNode* insertIntoBST(struct TreeNode* root, int val);
+struct TreeNode* _newBST(int val);

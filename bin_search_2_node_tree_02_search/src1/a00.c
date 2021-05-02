@@ -145,6 +145,7 @@ void test03(){
 
 void test04(){
     TreeNode * __tmpNode;
+    BSTIterator * __tmpIter ;
 
     __tmpNode = NULL;
 
@@ -158,6 +159,10 @@ void test04(){
     __tmpNode = insertIntoBST( __tmpNode , 4 );
     __tmpNode = insertIntoBST( __tmpNode , 3 );
     _dumpTreeNode( __tmpNode );
+
+    __tmpIter = bSTIteratorCreate( __tmpNode ) ;
+    _dumpBSTsort( __tmpIter ) ;
+
     printf("\n");
 
 } // test04
