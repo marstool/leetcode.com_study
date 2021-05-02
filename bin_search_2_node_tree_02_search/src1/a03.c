@@ -8,8 +8,11 @@ struct TreeNode* _findFirst( struct TreeNode* root ) {
     if ( NULL == root ) return NULL ;
 
     while ( NULL != root ) {
-        __tmpNode = _findPrev( root -> left ) ;
+        // printf( "%d " , root -> val );
+
+        __tmpNode = root -> left ;
         if ( NULL == __tmpNode ) {
+            // printf( " rt(%d).\n" , root -> val );
             return root ;
         }
         root = __tmpNode ;

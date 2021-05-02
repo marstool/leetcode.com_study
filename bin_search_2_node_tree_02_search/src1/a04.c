@@ -25,24 +25,19 @@ void _dumpTreeNode(TreeNode* root){
     }
 } // _dumpTreeNode
 
-const char * _dumpOneTreeNode(TreeNode* ___tn){
-    static char __dBuf[256] ;
-    char __dBuf2[256] ;
+void _dumpOneTreeNode(TreeNode* ___tn){
+    if ( NULL == ___tn ) { printf( "L(*) ** R(*)" ); return ; }
 
-    if ( NULL == ___tn ) return "L(*) ** R(*)" ;
+    if (NULL == ___tn -> left) printf( "L(*)" );
+    else                       printf( "L(%d)", ___tn -> left -> val );
 
-    if (NULL == ___tn -> left) strcpy( __dBuf , "L(*)" );
-    else                      sprintf( __dBuf , "L(%d)", ___tn -> left -> val );
-
-    sprintf( __dBuf2 , " %d ", ___tn -> val );
-    strcat( __dBuf , __dBuf2 );
+    printf( " %d ", ___tn -> val );
 
 
-    if (NULL == ___tn -> right) sprintf( __dBuf2 , "L(*)" );
-    else                        sprintf( __dBuf2 , "L(%d)", ___tn -> right -> val );
-    strcat( __dBuf , __dBuf2 );
+    if (NULL == ___tn -> right) printf( "L(*)" );
+    else                        printf( "L(%d)", ___tn -> right -> val );
 
-    return __dBuf ;
+    return ;
 } // _dumpOneTreeNode
 
 void _dumpBSTsort( BSTIterator * ___iter ) {
@@ -52,16 +47,24 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
 
     if ( NULL == ___iter ) { printf( "===== NULL BSTIterator MET ! 81839111 =====\n\n" ); return ; }
 
-    printf ( " the BSTiter is : nodeRoot : %s,  first : %s, current : %s \n" , 
-            _dumpOneTreeNode( ___iter -> nodeRoot ),
-            _dumpOneTreeNode( ___iter -> firstNode ),
-            _dumpOneTreeNode( ___iter -> curNode )
+    if(0) printf ( " 81839112 the BSTiter is : nodeRoot : %d,  first : %d, current : %d \n" 
+            , ___iter -> nodeRoot -> val  
+            , ___iter -> firstNode -> val 
+            , ___iter -> curNode -> val 
            );
+
+    printf ( " 81839113 the BSTiter is : nodeRoot : " );
+    _dumpOneTreeNode( ___iter -> nodeRoot );
+    printf ( " first : " );
+    _dumpOneTreeNode( ___iter -> firstNode );
+    printf ( " current : " );
+    _dumpOneTreeNode( ___iter -> curNode );
+    printf ( "\n" );
 
 
     __rt = isValidBST( ___iter -> nodeRoot );
     if ( false == __rt ) {
-        printf( "===== inValid BSTIterator Found ! 81839112 =====\n" ); 
+        printf( "===== inValid BSTIterator Found ! 81839115 =====\n" ); 
         _dumpTreeNode( ___iter -> nodeRoot );
         printf("\n");
         return ; 

@@ -1,9 +1,14 @@
 #include "h00.h"
 
 BSTIterator* bSTIteratorCreate(struct TreeNode* root) {
+    if ( NULL == root ) return NULL ;
+
     _ST01 . nodeRoot = root ;
     _ST01 . firstNode  = _findFirst( root ) ;
     _ST01 . curNode  = _ST01 . firstNode  ;
+
+    //printf( "created : %d %d %d.\n" , root -> val , _ST01 . firstNode -> val , _ST01 . curNode -> val);
+
     return &_ST01 ;
 }
 
