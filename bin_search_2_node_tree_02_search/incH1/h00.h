@@ -38,3 +38,4 @@ struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) ;
 struct TreeNode* _findPrev( struct TreeNode* root ) ;
 
 struct TreeNode* _findFirst( struct TreeNode* root ) ;
+struct TreeNode* searchBST(struct TreeNode* root, int val);

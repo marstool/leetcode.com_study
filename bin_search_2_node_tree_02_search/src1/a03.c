@@ -40,16 +40,12 @@ struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) {
     if ( NULL == root ) return NULL ;
     if ( NULL == ___now ) return NULL ;
 
-
-    if ( root == ___now ) {
-        if ( NULL == ___now -> right ) {
-            return NULL ; 
-        }
+    if ( NULL != ___now -> right ) {
         return _findFirst( ___now -> right ) ;
     }
 
-    if ( NULL != ___now -> right ) {
-        return _findFirst( ___now -> right ) ;
+    if ( root == ___now ) {
+        return NULL ; 
     }
 
     if ( root -> val < ___now -> val ) { // root < now

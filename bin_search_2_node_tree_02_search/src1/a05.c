@@ -33,6 +33,7 @@ bool bSTIteratorHasNext(BSTIterator* obj) {
 
 
 void bSTIteratorFree(BSTIterator* ___iter) {
+    if ( NULL == ___iter ) return ;
     ___iter -> nodeRoot = NULL ;
     ___iter -> firstNode  = NULL ;
     ___iter -> curNode  = NULL ;
