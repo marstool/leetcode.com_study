@@ -35,7 +35,7 @@ struct TreeNode* _findPrev( struct TreeNode* root ) {
 }
 
 struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) {
-    //struct TreeNode* __tmpNode ;
+    struct TreeNode* __tmpNode ;
 
     if ( NULL == root ) return NULL ;
     if ( NULL == ___now ) return NULL ;
@@ -48,6 +48,10 @@ struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) {
         return _findFirst( ___now -> right ) ;
     }
 
+    if ( NULL != ___now -> right ) {
+        return _findFirst( ___now -> right ) ;
+    }
+
     if ( root -> val < ___now -> val ) { // root < now
         return _findNext( root -> right , ___now ) ;
     }
@@ -57,17 +61,12 @@ struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) {
         return root ;
     }
 
-    if ( NULL != ___now -> right ) {
-        return _findFirst( ___now -> right ) ;
+    __tmpNode = _findNext( root -> left , ___now ) ;
+    if ( NULL == __tmpNode ) {
+        return root ;
     }
 
-    // NULL == ___now -> right // so , between root and now
-    
-    while ( root -> left != ___now ) {
-        root = root -> left ;
-    }
-    
-    return root ;
+    return __tmpNode ;
 }
 
 
