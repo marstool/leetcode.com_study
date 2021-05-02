@@ -4,6 +4,16 @@
 BSTIterator _ST01 = { NULL };
 
 struct TreeNode* _findFirst( struct TreeNode* root ) {
+    struct TreeNode* __tmpNode ;
+    if ( NULL == root ) return NULL ;
+
+    while ( NULL != root ) {
+        __tmpNode = _findPrev( root -> left ) ;
+        if ( NULL == __tmpNode ) {
+            return root ;
+        }
+        root = __tmpNode ;
+    }
     return NULL ;
 }
 
