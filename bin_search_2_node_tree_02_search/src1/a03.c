@@ -42,23 +42,31 @@ struct TreeNode* _findNext( struct TreeNode* root , struct TreeNode* ___now) {
 
 
     if ( root == ___now ) {
-        return _findPrev( ___now -> right ) ;
+        if ( NULL == ___now -> right ) {
+            return NULL ; 
+        }
+        return _findFirst( ___now -> right ) ;
     }
 
     if ( root -> val < ___now -> val ) {
-        return _findNext( root -> right , ___now ) ;
+        return _findFirst( ___now -> right ) ;
     }
 
-    if ( root -> val > ___now -> val ) {
-        if ( NULL != ___now -> right ) {
-            return _findNext( ___now -> right , ___now ) ;
-        }
+    // root -> val > ___now -> val 
+    if ( ___now == root-> left ) {
         return root ;
     }
 
-    if ( NULL != root -> left ) {
-        return _findNext( root -> left , ___now ) ;
+    if ( NULL != ___now -> right ) {
+        return _findFirst( ___now -> right ) ;
     }
+
+    // NULL == ___now -> right // so , between root and now
+    
+    while ( root -> left != ___now ) {
+        root = root -> left ;
+    }
+    
     return root ;
 }
 
