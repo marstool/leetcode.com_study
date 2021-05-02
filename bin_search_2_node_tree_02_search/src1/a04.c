@@ -4,7 +4,7 @@ void _dumpTreeNode(TreeNode* root){
     int __i01 ; 
     TreeNode* __tp ;
 
-    if ( NULL == root ) { printf( "===== NULL treeNodeArr MET ! =====\n" ); return ; }
+    if ( NULL == root ) { printf( "===== NULL treeNodeArr MET ! 1838191 =====\n" ); return ; }
 
     for ( __i01 = 0 ; __i01 < _max_treeAmount ; __i01 ++ ) {
         __tp = root + __i01 ;
@@ -16,7 +16,7 @@ void _dumpTreeNode(TreeNode* root){
 
         if (NULL == __tp -> right) printf( "R(*)" );
         else                       printf( "R(%d)", __tp -> right -> val );
-        
+
         if ( 3 == __i01 % 4 ) {
             printf( "\n" ) ;
         } else {
@@ -25,5 +25,42 @@ void _dumpTreeNode(TreeNode* root){
     }
 } // _dumpTreeNode
 
+const char * _dumpOneTreeNode(TreeNode* ___tn){
+    static char __dBuf[256] ;
+    char __dBuf2[256] ;
+
+    if ( NULL == ___tn ) return "L(*) N* R(*)" ;
+
+    if (NULL == ___tn -> left) strcpy( __dBuf , "L(*)" );
+    else                      sprintf( __dBuf , "L(%d)", ___tn -> left -> val );
+
+    sprintf( __dBuf2 , " %d ", ___tn -> val );
+    strcat( __dBuf , __dBuf2 );
+
+
+    if (NULL == ___tn -> right) sprintf( __dBuf2 , "L(*)" );
+    else                        sprintf( __dBuf2 , "L(%d)", ___tn -> right -> val );
+    strcat( __dBuf , __dBuf2 );
+
+    return __dBuf ;
+} // _dumpOneTreeNode
+
 void _dumpBSTsort( BSTIterator * ___iter ) {
+    // bool __rt ;
+    //TreeNode * __treeNode01;
+    //TreeNode * __treeNode02;
+
+    if ( NULL == ___iter ) { printf( "===== NULL BSTIterator MET ! 81839111 =====\n" ); return ; }
+
+    printf ( " the BSTiter is : %s, %s, %s \n" , 
+            _dumpOneTreeNode( ___iter -> nodeRoot ),
+            _dumpOneTreeNode( ___iter -> firstNode ),
+            _dumpOneTreeNode( ___iter -> curNode )
+           );
+
+    //__treeNode01 = ___iter -> nodeRoot ;
+    //__treeNode02 = ___iter -> firstNode ;
+    //TreeNode * __treeNode02;
+
+    // __rt = isValidBST( __treeNode01 );
 } // _dumpBSTsort
