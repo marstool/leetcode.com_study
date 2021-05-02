@@ -42,6 +42,7 @@ void _dumpOneTreeNode(TreeNode* ___tn){
 
 void _dumpBSTsort( BSTIterator * ___iter ) {
     bool __rt ;
+    int __cnt01;
     //TreeNode * __treeNode01;
     //TreeNode * __treeNode02;
 
@@ -70,10 +71,14 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
         return ; 
     }
 
-    //__treeNode01 = ___iter -> nodeRoot ;
-    //__treeNode02 = ___iter -> firstNode ;
-    //TreeNode * __treeNode02;
+    for ( __cnt01 = 20 ; __cnt01 > 0 ; __cnt01 -- ) {
+        if ( true == bSTIteratorHasNext( ___iter ) ) {
+            printf( " y:%d" , bSTIteratorNext( ___iter )) ;
+        } else {
+            printf( " n.\n" );
+            break ;
+        }
+    }
 
-    // __rt = isValidBST( __treeNode01 );
     printf("\n");
 } // _dumpBSTsort
