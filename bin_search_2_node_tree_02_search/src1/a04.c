@@ -29,7 +29,7 @@ const char * _dumpOneTreeNode(TreeNode* ___tn){
     static char __dBuf[256] ;
     char __dBuf2[256] ;
 
-    if ( NULL == ___tn ) return "L(*) N* R(*)" ;
+    if ( NULL == ___tn ) return "L(*) ** R(*)" ;
 
     if (NULL == ___tn -> left) strcpy( __dBuf , "L(*)" );
     else                      sprintf( __dBuf , "L(%d)", ___tn -> left -> val );
@@ -46,7 +46,7 @@ const char * _dumpOneTreeNode(TreeNode* ___tn){
 } // _dumpOneTreeNode
 
 void _dumpBSTsort( BSTIterator * ___iter ) {
-    // bool __rt ;
+    bool __rt ;
     //TreeNode * __treeNode01;
     //TreeNode * __treeNode02;
 
@@ -57,7 +57,14 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
             _dumpOneTreeNode( ___iter -> firstNode ),
             _dumpOneTreeNode( ___iter -> curNode )
            );
-    _dumpTreeNode( ___iter -> nodeRoot );
+
+
+    __rt = isValidBST( ___iter -> nodeRoot );
+    if ( false == __rt ) {
+        printf( "===== inValid BSTIterator Found ! 81839112 =====\n" ); 
+        _dumpTreeNode( ___iter -> nodeRoot );
+        return ; 
+    }
 
     //__treeNode01 = ___iter -> nodeRoot ;
     //__treeNode02 = ___iter -> firstNode ;
