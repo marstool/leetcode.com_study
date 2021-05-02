@@ -16,7 +16,7 @@ int bSTIteratorNext(BSTIterator* obj) {
     int __rt ; 
     if ( false == bSTIteratorHasNext( obj ) ) return -1 ;
     __rt = obj -> curNode -> val ; 
-    obj -> curNode = _findNext( obj -> nodeRoot , obj -> curNode ) ;
+    //obj -> curNode = _findNext( obj -> nodeRoot , obj -> curNode ) ;
     return __rt ;
 }
 
