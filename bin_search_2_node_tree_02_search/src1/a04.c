@@ -23,10 +23,19 @@ void _dumpTreeNode(TreeNode* root){
     if ( NULL == root ) { printf( "===== NULL treeNodeArr MET ! 1838191 =====\n" ); return ; }
 
     _dumpOneTreeNode( root ) ;
-    if ( NULL != root -> left)   _dumpOneTreeNode( root -> left ) ;
-    if ( NULL != root -> right)  _dumpOneTreeNode( root -> right ) ;
+    //if ( NULL != root -> left)   _dumpOneTreeNode( root -> left ) ;
+    //if ( NULL != root -> right)  _dumpOneTreeNode( root -> right ) ;
+    //_dumpOneTreeNode( root -> left ) ;
+    //_dumpOneTreeNode( root -> right ) ;
+    printf("\n");
+    if ( NULL == root -> left)   { _dumpOneTreeNode( root -> left ) ; printf("\n"); }
+    else                           _dumpTreeNode(    root -> left ) ;
+
+    if ( NULL == root -> right)  { _dumpOneTreeNode( root -> right ) ; printf("\n"); }
+    else                         _dumpTreeNode(    root -> right ) ;
 } // _dumpTreeNode
 
+/*
 void _dumpTreeNodeBAK(TreeNode* root){
     int __i01 ; 
     TreeNode* __tp ;
@@ -51,6 +60,7 @@ void _dumpTreeNodeBAK(TreeNode* root){
         }
     }
 } // _dumpTreeNode
+*/
 
 void _dumpBSTsort( BSTIterator * ___iter ) {
     bool __rt ;
@@ -79,7 +89,7 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
     if ( false == __rt ) {
         printf( "===== inValid BSTIterator Found ! 81839115 =====\n" ); 
         _dumpTreeNode( ___iter -> nodeRoot );
-        printf("\n");
+        //printf("\n");
         return ; 
     }
 
