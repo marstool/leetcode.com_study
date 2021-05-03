@@ -4,7 +4,8 @@
 #include <stdlib.h>
 
 //#define _max_treeAmount    32    // moust be 2 ^^ 1,2,3,4,5.... 2, 4, 8 , 16 , 32
-#define _max_treeAmount    16    // moust be 2 ^^ 1,2,3,4,5.... 2, 4, 8 , 16 , 32
+//#define _max_treeAmount    16    // moust be 2 ^^ 1,2,3,4,5.... 2, 4, 8 , 16 , 32
+#define _max_treeAmount    128    // moust be 2 ^^ 1,2,3,4,5.... 2, 4, 8 , 16 , 32
 
 struct TreeNode {
     int val;
