@@ -125,7 +125,7 @@ void test03(){
     __treeNode01 = _treeNodeCreateX( _str00 );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
-    return ;
+    // return ;
 
     printf ( "create --- %s \n" , _str01 );
     __treeNode01 = _treeNodeCreateX( _str01 );
