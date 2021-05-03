@@ -35,12 +35,26 @@ TreeNode * _treeNodeCreateOneX( TreeNode * ___topNode , char *___sbuf , int ___i
     __v01 = atoi( ___sbuf ) ;
     __rtNode = _newBST( __v01 ) ;
 
+    if ( 1 == ___idx ) {
+        return __rtNode ;
+    }
+
     __upIdx = ___idx ;
     while ( 1 ) {
-        __upIdx = (__upIdx >> 1) ;
+        __upL0R1 = (__upIdx & 1);
+        __upIdx = ( __upIdx >> 1) ;
         if ( 0 == __upIdx ) {
-            __upL0R1 = (___idx & 1);
+            if ( 0 == __upL0R1 ) {
+                ___topNode -> left =  __rtNode ;
+            } else {
+                ___topNode -> right = __rtNode ;
+            }
             break ; 
+        }
+        if ( 0 == __upL0R1 ) {
+            ___topNode = ___topNode -> left ;
+        } else {
+            ___topNode = ___topNode -> right ;
         }
     }
 
