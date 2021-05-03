@@ -39,3 +39,8 @@ void bSTIteratorFree(BSTIterator* ___iter) {
     ___iter -> curNode  = NULL ;
 }
 
+struct TreeNode* deleteNode(struct TreeNode* ___tn, int key){
+    if ( NULL == ___tn ) return NULL ;
+
+    return ___tn ;
+} // deleteNode

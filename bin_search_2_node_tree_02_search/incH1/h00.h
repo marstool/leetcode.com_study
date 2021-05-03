@@ -44,3 +44,4 @@ struct TreeNode* searchBST(struct TreeNode* root, int val);
 struct TreeNode* insertIntoBST(struct TreeNode* root, int val);
 struct TreeNode* _newBST(int val);
 void _freeOneNode( TreeNode * ___treeNodeTop);
+struct TreeNode* deleteNode(struct TreeNode* root, int key);
