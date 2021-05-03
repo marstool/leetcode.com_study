@@ -1,7 +1,7 @@
 #include "h00.h"
 
+//#define _dbtc if(0)
 #define _dbtc if(1)
-//#define _dbtc 
 
 TreeNode _treeNodeArr[ _max_treeAmount ] ;
 TreeNode * _treeNode_top ;
@@ -15,9 +15,12 @@ TreeNode * _treeNodeCreateOneX( TreeNode * ___topNode , char *___sbuf , int ___i
     TreeNode * __rtNode ;
 
     __rtNode = NULL ;
-    if ( 1 == ___idx ) { _dbtc printf("\n"); } ; _dbtc printf("[%d]<%s>\n", ___idx , ___sbuf);
+
+    if ( 1 == ___idx ) { _dbtc printf("\n"); } 
+    _dbtc printf("8381911 [%d]<%s>\n", ___idx , ___sbuf);
+
     if ( NULL == ___sbuf  ) {
-        printf( "8381911 error _treeNodeCreateOneX : %d : %s\n", ___idx , (NULL==___sbuf)?"null":"notNull" ); 
+        printf( "8381913 error _treeNodeCreateOneX : %d : %s\n", ___idx , (NULL==___sbuf)?"null":"notNull" ); 
         return NULL ;
     }
 
@@ -29,6 +32,7 @@ TreeNode * _treeNodeCreateOneX( TreeNode * ___topNode , char *___sbuf , int ___i
             && ___sbuf[3] == 'l' 
        ) 
     {
+        _dbtc printf("8381915 null found\n");
         return NULL ;
     }
 
@@ -36,6 +40,7 @@ TreeNode * _treeNodeCreateOneX( TreeNode * ___topNode , char *___sbuf , int ___i
     __rtNode = _newBST( __v01 ) ;
 
     if ( 1 == ___idx ) {
+        _dbtc printf("8381917 first.\n");
         return __rtNode ;
     }
 
