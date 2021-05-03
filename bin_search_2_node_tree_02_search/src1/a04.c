@@ -98,7 +98,7 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
 
     for ( __cnt01 = 20 ; __cnt01 > 0 ; __cnt01 -- ) {
         if ( true == bSTIteratorHasNext( ___iter ) ) {
-            printf( " y:%d" , bSTIteratorNext( ___iter )) ;
+            printf( " y:%d " , bSTIteratorNext( ___iter )) ;
         } else {
             printf( " n.\n" );
             break ;
