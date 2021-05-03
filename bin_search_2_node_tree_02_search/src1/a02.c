@@ -178,9 +178,9 @@ TreeNode * _treeNodeCreateX( char *___sbuf ) {
     }
 
     if ( __cn01 == _max_treeAmount ) {
-        printf( " 81838181 create nodeTree reach Max ( %d ) , why ?\n", _max_treeAmount ) ;
+        printf( "81838181 create nodeTree reach Max ( %d ) , why ?\n", _max_treeAmount ) ;
     } else {
-        printf( " 81838182 create nodeTree amount ( %d ) , correct ?\n", __cn09 ) ;
+        printf( "81838182 create nodeTree amount ( %d ) , correct ?\n", __cn09 ) ;
     }
 
     return _treeNode_top ;
