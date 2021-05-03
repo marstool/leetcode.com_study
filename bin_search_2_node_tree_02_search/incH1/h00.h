@@ -31,7 +31,7 @@ TreeNode * _treeNodeCreate( char *___sbuf ) ;
 TreeNode * _treeNodeCreateX( char *___sbuf ) ;
 int               _treeNodeFree( TreeNode * ___treeNodeTop);
 
-void _dumpTreeNode(TreeNode* root);
+void _dumpTreeNode(TreeNode* root, char * ___sep);
 void _dumpBSTsort( BSTIterator * ___iter ) ;
 bool isValidBST(TreeNode* root);
 

@@ -98,22 +98,22 @@ void test02(){
     __treeNode01 = _treeNodeCreateX( _str00 );
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str00 );
-    _dumpTreeNode( __treeNode01 );
+    _dumpTreeNode( __treeNode01 , " " );
 
     __treeNode01 = _treeNodeCreateX( _str01 );
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str01 );
-    _dumpTreeNode( __treeNode01 );
+    _dumpTreeNode( __treeNode01 , " " );
 
     __treeNode01 = _treeNodeCreateX( _str02 );
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str02 );
-    _dumpTreeNode( __treeNode01 );
+    _dumpTreeNode( __treeNode01 , " " );
 
     __treeNode01 = _treeNodeCreateX( _str03 );
     __rt = isValidBST( __treeNode01 );
     printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str03 );
-    _dumpTreeNode( __treeNode01 );
+    _dumpTreeNode( __treeNode01 , " " );
 
     printf( "\n\n" ) ;
 } // test02
@@ -161,7 +161,7 @@ void test04(){
     __tmpNode = insertIntoBST( __tmpNode , 7 );
     __tmpNode = insertIntoBST( __tmpNode , 4 );
     __tmpNode = insertIntoBST( __tmpNode , 3 );
-    _DP _dumpTreeNode( __tmpNode );
+    _DP _dumpTreeNode( __tmpNode , " " );
 
     __tmpIter = bSTIteratorCreate( __tmpNode ) ;
     printf ( "create result is :========= %s\n" , (isValidBST( __tmpNode ))?"true":"false" );
@@ -177,38 +177,38 @@ void test05(){
     int __rt ;
 
     __treeNode01 = _treeNodeCreateX( _str06 ); // "5,3,6,2,4,null,7" 
-    __rt = isValidBST( __treeNode01 );
-    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str06 );
-    //_dumpTreeNode( __treeNode01 );
+    //__rt = isValidBST( __treeNode01 );
+    //printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str06 );
+    //_dumpTreeNode( __treeNode01 , " " );
 
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     __rt = isValidBST( __treeNode01 );
-    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str06 );
-    _dumpBSTsort( __tmpIter ) ;
+    printf ( "create result is :========= %s : \n" , __rt?"true":"false" );
+    {_dumpTreeNode( __treeNode01 , " " ); printf( "\n" ); _dumpBSTsort( __tmpIter ) ; }
 
     __treeNode01 = deleteNode( __treeNode01 , 0 ) ;
     __rt = isValidBST( __treeNode01 );
-    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str06 );
+    printf ( "create result is :========= %s : \n" , __rt?"true":"false" );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
-    _dumpBSTsort( __tmpIter ) ;
+    {_dumpTreeNode( __treeNode01 , " " ); printf( "\n" ); _dumpBSTsort( __tmpIter ) ; }
 
     __treeNode01 = deleteNode( __treeNode01 , 3 ) ;
     __rt = isValidBST( __treeNode01 );
-    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str06 );
+    printf ( "create result is :========= %s : \n" , __rt?"true":"false" );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
-    _dumpBSTsort( __tmpIter ) ;
+    {_dumpTreeNode( __treeNode01 , " " ); printf( "\n" ); _dumpBSTsort( __tmpIter ) ; }
 
     __treeNode01 = deleteNode( __treeNode01 , 6 ) ;
     __rt = isValidBST( __treeNode01 );
-    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str06 );
+    printf ( "create result is :========= %s : \n" , __rt?"true":"false" );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
-    _dumpBSTsort( __tmpIter ) ;
+    {_dumpTreeNode( __treeNode01 , " " ); printf( "\n" ); _dumpBSTsort( __tmpIter ) ; }
 
     __treeNode01 = deleteNode( __treeNode01 , 5 ) ;
     __rt = isValidBST( __treeNode01 );
-    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str06 );
+    printf ( "create result is :========= %s : \n" , __rt?"true":"false" );
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
-    _dumpBSTsort( __tmpIter ) ;
+    {_dumpTreeNode( __treeNode01 , " " ); printf( "\n" ); _dumpBSTsort( __tmpIter ) ; }
 
 } // test05
 

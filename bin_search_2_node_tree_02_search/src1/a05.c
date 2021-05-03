@@ -49,6 +49,7 @@ struct TreeNode* deleteNode(struct TreeNode* ___tn, int key){
     printf( "1838181 : trying delete %d\n" , key ) ;
 
     if ( key == ___tn -> val ) { // try delete the root
+        printf( "1838183 : found and delete %d\n" , key ) ;
         if ( NULL == ___tn -> left ) { // delete the root while no left-child
             __tmpTN = ___tn -> right ;
             _freeOneNode( ___tn ) ;
@@ -79,9 +80,9 @@ struct TreeNode* deleteNode(struct TreeNode* ___tn, int key){
     }
 
     if ( key > ___tn -> val ) { // try delete the root-right-child
-        deleteNode( ___tn -> right , key);
+        ___tn -> right = deleteNode( ___tn -> right , key);
     } else { // try delete the root-left-child
-        deleteNode( ___tn -> left  , key);
+        ___tn -> left  = deleteNode( ___tn -> left  , key);
     }
 
     return ___tn ; // keep the origin root
