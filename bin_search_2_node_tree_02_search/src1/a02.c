@@ -7,18 +7,20 @@ TreeNode _treeNodeArr[ _max_treeAmount ] ;
 TreeNode * _treeNode_top ;
 char _str_null[] = "null" ;
 
-void _treeNodeCreateOneX( char *___sbuf , int ___idx ) {
+TreeNode * _treeNodeCreateOneX( TreeNode * ___topNode , char *___sbuf , int ___idx ) {
     int __cn02 ;
     int __upIdx ;
     int __upL0R1 ;
     int __v01 ;
+    TreeNode * __rtNode ;
 
+    __rtNode = NULL ;
     if ( 1 == ___idx ) { _dbtc printf("\n"); } ; _dbtc printf("[%d]<%s>\n", ___idx , ___sbuf);
     if ( NULL == ___sbuf 
             || 0 >= ___idx 
             || _max_treeAmount <= ___idx ) {
         fprintf( stderr , "error _treeNodeCreateOneX : %d : %s\n", ___idx , (NULL==___sbuf)?"null":"notNull" ); 
-        return ;
+        return __rtNode ;
     }
     __cn02 = strlen( ___sbuf )  ;
 
@@ -45,6 +47,7 @@ void _treeNodeCreateOneX( char *___sbuf , int ___idx ) {
 
     _treeNodeArr[___idx] . val = __v01 ;
 
+    return __rtNode ;
 } // _treeNodeCreateOneX
 
 /*
@@ -92,8 +95,10 @@ void _treeNodeCreateOne( char *___sbuf , int ___idx ) {
 TreeNode * _treeNodeCreateX( char *___sbuf ) {
     int __cn01 ;
     int __cn02 ;
+    int __cn09 ;
     char *__cp01 ;
     char __buf[256] ;
+    TreeNode * __tmpNode ;
 
     _treeNode_top = NULL ;
 
@@ -102,6 +107,7 @@ TreeNode * _treeNodeCreateX( char *___sbuf ) {
         return NULL ; 
     }
 
+    __cn09 = 0 ;
     for ( __cn01 = 1 ; __cn01 < _max_treeAmount ; __cn01 ++ ){
         __cp01 = index(___sbuf , ',');
         if ( NULL == __cp01 ) {
@@ -112,22 +118,27 @@ TreeNode * _treeNodeCreateX( char *___sbuf ) {
 
         strncpy( __buf , ___sbuf , __cn02 );
         __buf[__cn02] = 0 ;
-        _treeNodeCreateOneX( __buf , __cn01 ) ;
+        __tmpNode = _treeNodeCreateOneX( _treeNode_top , __buf , __cn01 ) ;
+
+        if ( NULL == __tmpNode ) {
+            __cn09 ++ ;
+        }
 
         if ( 1 == __cn01 ) {
-            _treeNode_top = _treeNodeArr + 1 ;
+            _treeNode_top = __tmpNode ;
         }
 
         if ( NULL == __cp01 ) {
-            __cn01 ++ ;
-            while ( __cn01 < _max_treeAmount ) { // set NULL to the remain
-                _treeNodeCreateOneX( _str_null , __cn01 ) ;
-                __cn01 ++ ;
-            }
             break ;
         }
 
         ___sbuf += __cn02 + 1 ;
+    }
+
+    if ( __cn01 == _max_treeAmount ) {
+        printf( " 81838181 create nodeTree reach Max ( %d ) , why ?\n", _max_treeAmount ) ;
+    } else {
+        printf( " 81838182 create nodeTree amount ( %d ) , why ?\n", __cn09 ) ;
     }
 
     return _treeNode_top ;
