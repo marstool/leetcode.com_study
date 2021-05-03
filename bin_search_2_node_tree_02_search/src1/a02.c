@@ -7,12 +7,42 @@ TreeNode _treeNodeArr[ _max_treeAmount ] ;
 TreeNode * _treeNode_top ;
 char _str_null[] = "null" ;
 
+TreeNode * _searchNode( TreeNode * ___topNode , int ___idx ) {
+    int __upIdx ;
+    int __upL0R1 ;
+
+    if ( NULL == ___topNode ) return NULL ;
+    if ( 0 >= ___idx ) return NULL ;
+
+    if ( 1 == ___idx ) return ___topNode ;
+
+    __upL0R1 = (___idx & 1);
+    __upIdx = ( ___idx >> 1) ;
+
+    printf ( " 83819191 __upIdx %d , __upL0R1 %d  \n" , __upIdx , __upL0R1 );
+
+    if ( 0 != __upIdx ) {
+        ___topNode = _searchNode( ___topNode , __upIdx ) ;
+        if ( NULL == ___topNode ) {
+            printf ( " 83819197 unexpect rt NULL\n" );
+            return NULL ;
+        }
+    }
+
+    if ( 0 == __upL0R1 ) {
+        return ___topNode -> left ;
+    }
+    return ___topNode -> right ;
+
+} // _searchNode
+
 TreeNode * _treeNodeCreateOneX( TreeNode * ___topNode , char *___sbuf , int ___idx ) {
     int __cn02 ;
     int __upIdx ;
     int __upL0R1 ;
     int __v01 ;
     TreeNode * __rtNode ;
+    TreeNode * __tmpNode ;
 
     __rtNode = NULL ;
 
@@ -44,23 +74,19 @@ TreeNode * _treeNodeCreateOneX( TreeNode * ___topNode , char *___sbuf , int ___i
         return __rtNode ;
     }
 
-    __upIdx = ___idx ;
-    while ( 1 ) {
-        __upL0R1 = (__upIdx & 1);
-        __upIdx = ( __upIdx >> 1) ;
-        if ( 0 == __upIdx ) {
-            if ( 0 == __upL0R1 ) {
-                ___topNode -> left =  __rtNode ;
-            } else {
-                ___topNode -> right = __rtNode ;
-            }
-            break ; 
-        }
-        if ( 0 == __upL0R1 ) {
-            ___topNode = ___topNode -> left ;
-        } else {
-            ___topNode = ___topNode -> right ;
-        }
+    __upL0R1 = (___idx & 1);
+    __upIdx = ( ___idx >> 1) ;
+    __tmpNode = _searchNode( ___topNode , __upIdx ) ;
+
+    if ( NULL == __tmpNode ) {
+        _dbtc printf("8381919 rt NULL! why ?. free %d nodeS. \n", _treeNodeFree( __rtNode ) );
+        return NULL ;
+    }
+
+    if ( 0 == __upL0R1 ) {
+        __tmpNode -> left  = __rtNode ; 
+    } else {
+        __tmpNode -> right = __rtNode ; 
     }
 
     return __rtNode ;
@@ -205,6 +231,24 @@ TreeNode * _treeNodeCreateX( char *___sbuf ) {
    } // _treeNodeCreateBAK
    */
 
+void _freeOneNode( TreeNode * ___treeNodeTop){
+    // create by _newBST
+    if ( NULL == ___treeNodeTop ) return ;
+    free( ___treeNodeTop ) ;
+} // _freeOneNode
+
 int               _treeNodeFree( TreeNode * ___treeNodeTop){
-    return 0 ;
-}
+    int __cnt01 ;
+
+    if ( NULL == ___treeNodeTop ) {
+        return 0 ;
+    }
+
+    __cnt01 = 1 ;
+    __cnt01 += _treeNodeFree( ___treeNodeTop -> left ) ;
+    __cnt01 += _treeNodeFree( ___treeNodeTop -> right ) ;
+
+    _freeOneNode( ___treeNodeTop ) ;
+
+    return __cnt01 ;
+} // _treeNodeFree
