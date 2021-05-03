@@ -1,5 +1,6 @@
 #include "h00.h"
 
+#define _DP if(0)
 
 //#ifdef kk
 // [5,1,4,null,null,3,6]
@@ -159,7 +160,7 @@ void test04(){
     __tmpNode = insertIntoBST( __tmpNode , 7 );
     __tmpNode = insertIntoBST( __tmpNode , 4 );
     __tmpNode = insertIntoBST( __tmpNode , 3 );
-    _dumpTreeNode( __tmpNode );
+    _DP _dumpTreeNode( __tmpNode );
 
     __tmpIter = bSTIteratorCreate( __tmpNode ) ;
     printf ( "create result is :========= %s\n" , (isValidBST( __tmpNode ))?"true":"false" );
