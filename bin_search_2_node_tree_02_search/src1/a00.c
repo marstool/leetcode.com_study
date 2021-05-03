@@ -162,6 +162,7 @@ void test04(){
     _dumpTreeNode( __tmpNode );
 
     __tmpIter = bSTIteratorCreate( __tmpNode ) ;
+    printf ( "create result is :========= %s\n" , (isValidBST( __tmpNode ))?"true":"false" );
     _dumpBSTsort( __tmpIter ) ;
 
     printf("\n");
