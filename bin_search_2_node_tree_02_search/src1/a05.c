@@ -40,7 +40,16 @@ void bSTIteratorFree(BSTIterator* ___iter) {
 }
 
 struct TreeNode* deleteNode(struct TreeNode* ___tn, int key){
+    TreeNode* __tmpTN ;
     if ( NULL == ___tn ) return NULL ;
+
+    printf( "1838181 : trying delete %d\n" , key ) ;
+
+    if ( key == ___tn -> val ) {
+        if ( NULL == ___tn -> right ) {
+        }
+    }
 
     return ___tn ;
 } // deleteNode
+
