@@ -92,6 +92,7 @@ void _dumpBSTsort( BSTIterator * ___iter ) {
         //printf("\n");
         return ; 
     }
+    _dumpTreeNode( ___iter -> nodeRoot );
 
     for ( __cnt01 = 20 ; __cnt01 > 0 ; __cnt01 -- ) {
         if ( true == bSTIteratorHasNext( ___iter ) ) {
