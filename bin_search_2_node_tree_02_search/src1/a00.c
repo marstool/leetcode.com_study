@@ -198,6 +198,18 @@ void test05(){
     __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
     _dumpBSTsort( __tmpIter ) ;
 
+    __treeNode01 = deleteNode( __treeNode01 , 6 ) ;
+    __rt = isValidBST( __treeNode01 );
+    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str06 );
+    __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
+    _dumpBSTsort( __tmpIter ) ;
+
+    __treeNode01 = deleteNode( __treeNode01 , 5 ) ;
+    __rt = isValidBST( __treeNode01 );
+    printf ( "create result is :========= %s : %s \n" , __rt?"true":"false" , _str06 );
+    __tmpIter = bSTIteratorCreate( __treeNode01 ) ;
+    _dumpBSTsort( __tmpIter ) ;
+
 } // test05
 
 
