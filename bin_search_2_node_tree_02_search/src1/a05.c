@@ -47,6 +47,9 @@ struct TreeNode* deleteNode(struct TreeNode* ___tn, int key){
 
     if ( key == ___tn -> val ) {
         if ( NULL == ___tn -> right ) {
+            __tmpTN = ___tn -> left ;
+            _freeOneNode( ___tn ) ;
+            return __tmpTN ;
         }
     }
 
