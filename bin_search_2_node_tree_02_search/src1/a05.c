@@ -63,12 +63,7 @@ struct TreeNode* deleteNode(struct TreeNode* ___tn, int key){
 
         // both left and right exist, delete root.
         __tmpTN = ___tn -> right ;
-        __tmpTN2 = __tmpTN -> left ;
-        if ( NULL == __tmpTN2 ){
-            __tmpTN -> left = ___tn -> left ;
-            _freeOneNode( ___tn ) ;
-            return __tmpTN ;
-        }
+        __tmpTN2 = __tmpTN ;
 
         while ( NULL != __tmpTN2 -> left ) {
             __tmpTN2 = __tmpTN2 -> left ;
